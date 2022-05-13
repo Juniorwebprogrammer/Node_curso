@@ -56,6 +56,30 @@ var Hotel = function() {
         sthis.datosHotel.habitaciones[sthis.datosHotel.habitaciones.length] = habitacionesHotel;
     };
 
+    var checkCampo = function(campo){
+        if ((campo)&&(campo.length>0)){
+            if (campo === 'sitioWeb'){
+                return function(){
+                    var expRegular = new RegExp("\[A-Z]{4}[:]{1}[/]{2}[A-Z]{3}[.]{1}[A-Z]{5}[.]{1}[A-Z]{3}");
+                    var valido = expRegular.test(sthis.datosHotel.sitioWeb);
+                    if (!valido){
+                        return false;
+                    }
+                };
+            } else if (campo==='telefono'){
+                return function(){
+                    var expRegular = new RegExp("\[+]{1}[0-9]{2][.]{1}[0-9]{9]");
+                    var valido = expRegular.test(sthis.datosHotel.telefono);
+                    return valido;
+                };
+            }else {
+                return function(){
+                    return true;
+                };
+            }
+        }
+    };
+
     return {
         getNombre: getNombre,
         setNombre: setNombre,
@@ -70,6 +94,7 @@ var Hotel = function() {
         getGerente: getGerente,
         setGerente: setGerente,
         getHabitaciones: getHabitaciones,
-        addHabitaciones: addHabitaciones
+        addHabitaciones: addHabitaciones,
+        checkCampo:checkCampo
     };
 };

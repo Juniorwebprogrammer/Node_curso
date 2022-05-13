@@ -58,6 +58,7 @@ var Gerente = function() {
         getNumeroDocumento: getNumeroDocumento,
         setNumeroDocumento: setNumeroDocumento,
         getTelefono: getTelefono,
-        setTelefono: setTelefono
+        setTelefono: setTelefono,
+        checkCampo: checkCampo
     };
 };

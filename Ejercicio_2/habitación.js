@@ -24,12 +24,30 @@ var Habitación = function() {
         sthis.datosHabitacion.telefono = TelefonoHabitacion
     };
 
+    var checkCampo = function(campo){
+        if ((campo)&&(campo.length>0)){
+            if (campo === 'telefono'){
+                return function(){
+                    var expRegular = new RegExp("\[+]{1}[0-9]{2}[.]{1}[0-9]{9}");
+                    var valido = expRegular.test(sthis.datosHabitacion.telefono);
+                    return valido;
+                };
+            } else {
+                return function(){
+                    return false;
+                };
+            }
+        }
+    };
+    
+
     return {
         getPlanta: getPlanta,
         setPlanta: setPlanta,
         getNumeroCamas: getNumeroCamas,
         setNumeroCamas: setNumeroCamas,
         getTelefono: getTelefono,
-        setTelefono: setTelefono
+        setTelefono: setTelefono,
+        checkCampo: checkCampo
     };
 };
