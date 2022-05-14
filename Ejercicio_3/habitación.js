@@ -6,10 +6,10 @@ var Habitación = function() {
         telefono: ''
     };
     // Refactorización aplicando clousures y lambdas
-    var functionTrue = function(){
+    this.functionTrue = function(){
         return true
     };
-    var checkCampoTelefono = function(){
+    this.checkCampoTelefono = function(){
         var expRegular = new RegExp("\[+]{1}[0-9]{2}[.]{1}[0-9]{9}");
         var valido = expRegular.test(sthis.datosHabitacion.telefono);
         return valido;

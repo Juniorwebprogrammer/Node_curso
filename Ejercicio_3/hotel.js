@@ -9,17 +9,17 @@ var Hotel = function() {
         gerente: null,
         habitaciones: []
     };
-    var functionTrue = function(){
+    this.functionTrue = function(){
         return true;
     };
-    var checkCampoSitioWeb = function(){
+    this.checkCampoSitioWeb = function(){
         var expRegular = new RegExp("\http://www[.]{1}[a-z]+[.]{1}[a-z]{2,3}");
         var valido = expRegular.test(sthis.datosHotel.sitioWeb);
         if (!valido){
             return false;
             }
     };
-    var checkCampoTelefono = function(){
+    this.checkCampoTelefono = function(){
         var expRegular = new RegExp("\[+]{1}[0-9]{2][.]{1}[0-9]{9]");
         var valido = expRegular.test(sthis.datosHotel.telefono);
         return valido;

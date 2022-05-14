@@ -5,10 +5,10 @@ var Gerente = function() {
         numeroDocumento: '',
         telefono: ''
     };
-    var functionTrue = function(){
+    this.functionTrue = function(){
         return true
     };
-    var checkCampoDocumento = function(){
+    this.checkCampoDocumento = function(){
         var expRegular = new RegExp("\[0-9]{8}-[A-Z]{1}");
         var valido = expRegular.test(sthis.datosGerente.numeroDocumento);
         if (!valido){
@@ -21,7 +21,7 @@ var Gerente = function() {
         var caracter = caracterCorrecto.charAt(parteNumericaDocumento % 23);
         return parteLiteralDocumento === caracter;
     };
-    var checkCampoTelefono = function(){
+    this.checkCampoTelefono = function(){
         var expRegular = new RegExp("\[+]{1}[0-9]{2}[.]{1}[0-9]{9}");
         var valido = expRegular.test(sthis.datosGerente.telefono);
         return valido;
