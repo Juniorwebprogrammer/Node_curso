@@ -34,7 +34,7 @@ var Habitación = function() {
                 };
             } else {
                 return function(){
-                    return false;
+                    return true;
                 };
             }
         }

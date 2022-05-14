@@ -60,7 +60,7 @@ var Hotel = function() {
         if ((campo)&&(campo.length>0)){
             if (campo === 'sitioWeb'){
                 return function(){
-                    var expRegular = new RegExp("\[A-Z]{4}[:]{1}[/]{2}[A-Z]{3}[.]{1}[A-Z]{5}[.]{1}[A-Z]{3}");
+                    var expRegular = new RegExp("\http://www[.]{1}[a-z]+[.]{1}[a-z]{2,3}");
                     var valido = expRegular.test(sthis.datosHotel.sitioWeb);
                     if (!valido){
                         return false;

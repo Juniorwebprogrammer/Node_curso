@@ -32,15 +32,34 @@ QUnit.test("Ejercicio_2", function(assert) {
     assert.equal(hotel.getDirección(), 'Cª el mendigo', 'OK');
     assert.equal(hotel.getTelefono(), '+34.000000000', 'OK');
     assert.equal(hotel.getSitioWeb(), 'http://www.hotel.com/', 'OK');
+    // Test para comprobar datos específicos
+    var comprobarTelefonoHotel = hotel.checkCampo('telefono');
+    var validoTelefonoHotel = comprobarTelefonoHotel;
+    assert.ok(validoTelefonoHotel, 'ok');
+    var comprobarWebHotel = hotel.checkCampo('sitioWeb');
+    var validoWebHotel = comprobarWebHotel;
+    assert.ok(validoWebHotel, 'ok');
     // Datos Gerente
     var GerenteHotel = hotel.getGerente();
+    var comprobarDocumentoGerente = gerente.checkCampo('documento');
+    var validoDocumentoGerente = comprobarDocumentoGerente;
+    var comprobarTelefonoGerente = gerente.checkCampo('telefono');
+    var validoTelefonoGerente = comprobarTelefonoGerente;
     assert.equal(GerenteHotel.getNombreCompleto(), 'Junior García', 'OK');
     assert.equal(GerenteHotel.getNumeroDocumento(), '79095983-F', 'OK');
-    assert.equal(GerenteHotel.getTelefono(), '+34.677614872', 'OK');
+    assert.equal(GerenteHotel.getTelefono(), '+34.677614872', 'OK'); 
+    assert.ok(validoDocumentoGerente,'ok');
+    assert.ok(validoTelefonoGerente, 'ok');
     // Datos Habitaciones
     var primeraHabitacion = hotel.getHabitaciones(0);
     var segundaHabitacion = hotel.getHabitaciones(1);
     var terceraHabitacion = hotel.getHabitaciones(2);
+    var comprobarTelefonoHabitación_1 = habitación1.checkCampo('telefono');
+    var validoTelefonoHabitación_1 = comprobarTelefonoHabitación_1;
+    var comprobarTelefonoHabitación_2 = habitación2.checkCampo('telefono');
+    var validoTelefonoHabitación_2 = comprobarTelefonoHabitación_2;
+    var comprobarTelefonoHabitación_3 = habitación3.checkCampo('telefono');
+    var validoTelefonoHabitación_3 = comprobarTelefonoHabitación_3;
     assert.equal(primeraHabitacion.getPlanta(), 'Primera', 'OK');
     assert.equal(primeraHabitacion.getNumeroCamas(), 2, 'OK');
     assert.equal(primeraHabitacion.getTelefono(), '+34.615675767', 'OK');
@@ -50,4 +69,7 @@ QUnit.test("Ejercicio_2", function(assert) {
     assert.equal(terceraHabitacion.getPlanta(), 'Tercera', 'OK');
     assert.equal(terceraHabitacion.getNumeroCamas(), 3, 'OK');
     assert.equal(terceraHabitacion.getTelefono(), '+34.613675767', 'OK');
+    assert.ok(validoTelefonoHabitación_1,'ok');
+    assert.ok(validoTelefonoHabitación_2,'ok');
+    assert.ok(validoTelefonoHabitación_3,'ok');
 })
