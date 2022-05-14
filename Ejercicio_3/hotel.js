@@ -70,14 +70,14 @@ var Hotel = function() {
         sthis.datosHotel.habitaciones[sthis.datosHotel.habitaciones.length] = habitacionesHotel;
     };
 
-    var checkCampo = function(campo){
+    this.checkCampo = function(campo){
         if ((campo)&&(campo.length>0)){
             if (campo === 'sitioWeb'){
-                return checkCampoSitioWeb;
+                return this.checkCampoSitioWeb;
             } else if (campo==='telefono'){
-                return checkCampoTelefono;
+                return this.checkCampoTelefono;
             }else {
-                return functionTrue;
+                return this.functionTrue;
             }
         }
     };

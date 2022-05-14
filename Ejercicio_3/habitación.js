@@ -33,12 +33,12 @@ var Habitación = function() {
         sthis.datosHabitacion.telefono = TelefonoHabitacion
     };
 
-    var checkCampo = function(campo){
+    this.checkCampo = function(campo){
         if ((campo)&&(campo.length>0)){
             if (campo === 'telefono'){
-                return checkCampoTelefono;
+                return this.checkCampoTelefono;
             } else {
-                return functionTrue;
+                return this.functionTrue;
             }
         }
     };
