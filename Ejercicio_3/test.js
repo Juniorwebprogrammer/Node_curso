@@ -1,4 +1,4 @@
-QUnit.test("Ejercicio_2", function(assert) {
+QUnit.test("Ejercicio_3", function(assert) {
     var gerente = new Gerente();
     gerente.setNombreCompleto('Junior García');
     gerente.setNumeroDocumento('79095983-F');
