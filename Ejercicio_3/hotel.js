@@ -9,7 +9,21 @@ var Hotel = function() {
         gerente: null,
         habitaciones: []
     };
-
+    var functionTrue = function(){
+        return true;
+    };
+    var checkCampoSitioWeb = function(){
+        var expRegular = new RegExp("\http://www[.]{1}[a-z]+[.]{1}[a-z]{2,3}");
+        var valido = expRegular.test(sthis.datosHotel.sitioWeb);
+        if (!valido){
+            return false;
+            }
+    };
+    var checkCampoTelefono = function(){
+        var expRegular = new RegExp("\[+]{1}[0-9]{2][.]{1}[0-9]{9]");
+        var valido = expRegular.test(sthis.datosHotel.telefono);
+        return valido;
+    }
     var getNombre = function() {
         return sthis.datosHotel.nombre
     };
@@ -59,23 +73,11 @@ var Hotel = function() {
     var checkCampo = function(campo){
         if ((campo)&&(campo.length>0)){
             if (campo === 'sitioWeb'){
-                return function(){
-                    var expRegular = new RegExp("\http://www[.]{1}[a-z]+[.]{1}[a-z]{2,3}");
-                    var valido = expRegular.test(sthis.datosHotel.sitioWeb);
-                    if (!valido){
-                        return false;
-                    }
-                };
+                return checkCampoSitioWeb;
             } else if (campo==='telefono'){
-                return function(){
-                    var expRegular = new RegExp("\[+]{1}[0-9]{2][.]{1}[0-9]{9]");
-                    var valido = expRegular.test(sthis.datosHotel.telefono);
-                    return valido;
-                };
+                return checkCampoTelefono;
             }else {
-                return function(){
-                    return true;
-                };
+                return functionTrue;
             }
         }
     };

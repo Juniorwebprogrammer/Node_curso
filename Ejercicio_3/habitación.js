@@ -5,6 +5,15 @@ var Habitación = function() {
         numeroCamas: 0,
         telefono: ''
     };
+    // Refactorización aplicando clousures y lambdas
+    var functionTrue = function(){
+        return true
+    };
+    var checkCampoTelefono = function(){
+        var expRegular = new RegExp("\[+]{1}[0-9]{2}[.]{1}[0-9]{9}");
+        var valido = expRegular.test(sthis.datosHabitacion.telefono);
+        return valido;
+    }
     var getPlanta = function() {
         return sthis.datosHabitacion.planta
     };
@@ -27,15 +36,9 @@ var Habitación = function() {
     var checkCampo = function(campo){
         if ((campo)&&(campo.length>0)){
             if (campo === 'telefono'){
-                return function(){
-                    var expRegular = new RegExp("\[+]{1}[0-9]{2}[.]{1}[0-9]{9}");
-                    var valido = expRegular.test(sthis.datosHabitacion.telefono);
-                    return valido;
-                };
+                return checkCampoTelefono;
             } else {
-                return function(){
-                    return true;
-                };
+                return functionTrue;
             }
         }
     };
