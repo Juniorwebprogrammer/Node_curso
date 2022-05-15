@@ -26,6 +26,17 @@ var Gerente = function() {
         var valido = expRegular.test(sthis.datosGerente.telefono);
         return valido;
     };
+    this.checkCampo = function(campo){
+        if((campo)&&(campo.length>0)){
+            if (campo === 'numeroDocumentoGerente'){
+                return this.checkCampoDocumento;
+        } else if (campo==='telefono'){
+            return this.checkCampoTelefono;
+        } else {
+            return this.functionTrue;
+        }
+    }
+};
     var getNombreCompleto = function() {
         return sthis.datosGerente.nombreCompleto
     };
@@ -44,17 +55,10 @@ var Gerente = function() {
     var setTelefono = function(TelefonoGerente) {
         sthis.datosGerente.telefono = TelefonoGerente
     };
-    this.checkCampo = function(campo){
-        if((campo)&&(campo.length>0)){
-            if (campo === 'numeroDocumentoGerente'){
-                return this.checkCampoDocumento;
-        } else if (campo==='telefono'){
-            return this.checkCampoTelefono;
-        } else {
-            return this.functionTrue;
-        }
-    }
-};
+    var checkCampo = function(campo){
+        return sthis.checkCampo(campo);
+    };
+    
     return {
         getNombreCompleto: getNombreCompleto,
         setNombreCompleto: setNombreCompleto,
@@ -62,6 +66,6 @@ var Gerente = function() {
         setNumeroDocumento: setNumeroDocumento,
         getTelefono: getTelefono,
         setTelefono: setTelefono,
-        checkCampo: checkCampo
+        checkCampo:checkCampo
     };
 };
