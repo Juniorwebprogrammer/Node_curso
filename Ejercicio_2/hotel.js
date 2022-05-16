@@ -9,7 +9,6 @@ var Hotel = function() {
         gerente: null,
         habitaciones: []
     };
-
     var getNombre = function() {
         return sthis.datosHotel.nombre
     };
@@ -65,17 +64,17 @@ var Hotel = function() {
                     if (!valido){
                         return false;
                     }
-                };
+                }
             } else if (campo==='telefono'){
                 return function(){
                     var expRegular = new RegExp("\[+]{1}[0-9]{2][.]{1}[0-9]{9]");
                     var valido = expRegular.test(sthis.datosHotel.telefono);
                     return valido;
-                };
+                }
             }else {
                 return function(){
                     return true;
-                };
+                }
             }
         }
     };

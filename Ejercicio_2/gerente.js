@@ -5,6 +5,7 @@ var Gerente = function() {
         numeroDocumento: '',
         telefono: ''
     };
+
     var getNombreCompleto = function() {
         return sthis.datosGerente.nombreCompleto
     };
@@ -38,17 +39,17 @@ var Gerente = function() {
                     var caracterCorrecto ='TRWAGMYFPDXBNJZSQVHLCKE';
                     var caracter = caracterCorrecto.charAt(parteNumericaDocumento % 23);
                     return parteLiteralDocumento === caracter;
-            };
+                }
         } else if (campo==='telefono'){
             return function(){
                 var expRegular = new RegExp("\[+]{1}[0-9]{2}[.]{1}[0-9]{9}");
                 var valido = expRegular.test(sthis.datosGerente.telefono);
                 return valido;
-            };
+            }
         } else {
             return function(){
                 return true;
-            };
+            }
         }
     }
 };
