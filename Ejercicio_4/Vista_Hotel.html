@@ -12,20 +12,20 @@
     <div id="qunit-fixture"></div>
     <script src="qunit/qunit-2.18.0.js"></script>
     <script src="test.js"></script>
-    <script src="jquery.min.js"></script>
+    <script src="qunit/jquery.min.js"></script>
     <script src="hotel.js"></script>
     <script src="gerente.js"></script>
     <script src="habitación.js"></script>
-
-    <form>
-        Nombre del hotel <input type="text" id="nombre_Hotel" name="nombre_Hotel"/> <br/> <br/>
-        Ciudad <input type="text" id="Ciudad_Hotel" name="ciudad_Hotel"/> <br/> <br/>
-        Dir Hotel <input type="text" id="dir_Hotel" name="dir_Hotel"/> <br/> <br/>
-        Telefono <input type="number" id="telefono" name="telefono"/> <br/> <br/>
-        Sitio Web <input type="text" id="sitio_Web" name="sitio_Web"/> <br/> <br/>
-        Gerente <link rel="stylesheet" href="./Vista_Gerente.html">
-        Habitaciones <link rel="stylesheet" href="./Vista_Habitaciones.html">
-
+    <form style="margin-top: 250px;">
+        <br/>
+        Nombre del hotel: <input type="text" id="nombre_Hotel" name="nombre_Hotel"/> <br/> <br/>
+        Ciudad: <input type="text" id="Ciudad_Hotel" name="ciudad_Hotel"/> <br/> <br/>
+        Dir Hotel: <input type="text" id="dir_Hotel" name="dir_Hotel"/> <br/> <br/>
+        Telefono: <input type="text" id="telefono" name="telefono"/> <br/> <br/>
+        Sitio Web: <input type="text" id="sitio_Web" name="sitio_Web"/> <br/> <br/>
+        <a href="./Vista_Gerente.html"> Procesar gerente</a> <br/> <br/>
+        <a href="./Vista_Habitaciones.html"> Procesar habitaciones </a> <br/> <br/>
+        <input id="procesarHotel" type="submit" value="Procesar"/>
     </form>
 </body>
 </html>
