@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="qunit/qunit-2.18.0.css">
+    <script src="qunit/qunit-2.18.0.js"></script>
+    <script src="qunit/jquery.min.js"></script>
+    <script src="hotel.js"></script>
+    <script src="vista_hotel.js"></script>
+    <script src="controladorHotel.js"></script>
     <title>Ejercicio_4_vista_Hotel</title>
 </head>
 <body>
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
-    <script src="qunit/qunit-2.18.0.js"></script>
-    <script src="test.js"></script>
-    <script src="qunit/jquery.min.js"></script>
-    <script src="hotel.js"></script>
-    <script src="gerente.js"></script>
-    <script src="habitación.js"></script>
-    <form style="margin-top: 250px;">
-        <br/>
-        Nombre del hotel: <input type="text" id="nombre_Hotel" name="nombre_Hotel"/> <br/> <br/>
-        Ciudad: <input type="text" id="Ciudad_Hotel" name="ciudad_Hotel"/> <br/> <br/>
-        Dir Hotel: <input type="text" id="dir_Hotel" name="dir_Hotel"/> <br/> <br/>
-        Telefono: <input type="text" id="telefono" name="telefono"/> <br/> <br/>
-        Sitio Web: <input type="text" id="sitio_Web" name="sitio_Web"/> <br/> <br/>
-        <a href="./Vista_Gerente.html"> Procesar gerente</a> <br/> <br/>
-        <a href="./Vista_Habitaciones.html"> Procesar habitaciones </a> <br/> <br/>
-        <input id="procesarHotel" type="submit" value="Procesar"/>
-    </form>
+    <div id="formulario">
+        <form>
+            <br/>
+            Nombre del hotel: <input type="text" id="nombre_Hotel" name="nombre_Hotel"/> <br/> <br/>
+            Ciudad: <input type="text" id="Ciudad_Hotel" name="ciudad_Hotel"/> <br/> <br/>
+            Dir Hotel: <input type="text" id="dir_Hotel" name="dir_Hotel"/> <br/> <br/>
+            Telefono: <input type="text" id="telefono" name="telefono"/> <br/> <br/>
+            Sitio Web: <input type="text" id="sitio_Web" name="sitio_Web"/> <br/> <br/>
+            <a href="./Vista_Gerente.html"> Procesar gerente</a> <br/> <br/>
+            <a href="./Vista_Habitaciones.html"> Procesar habitación </a> <br/> <br/>
+            <input id="procesarHotel" type="submit" value="Procesar"/>
+        </form>
+    </div>
 </body>
 </html>
