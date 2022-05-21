@@ -44,6 +44,10 @@ var Gerente = function() {
     var setTelefono = function(TelefonoGerente) {
         sthis.datosGerente.telefono = TelefonoGerente
     };
+    var checkCampo = function(campo){
+        return sthis.checkCampo(campo);
+    }
+    
     this.checkCampo = function(campo){
         if((campo)&&(campo.length>0)){
             if (campo === 'numeroDocumentoGerente'){

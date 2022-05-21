@@ -14,6 +14,15 @@ var Habitación = function() {
         var valido = expRegular.test(sthis.datosHabitacion.telefono);
         return valido;
     }
+    this.checkCampo = function(campo){
+        if ((campo)&&(campo.length>0)){
+            if (campo === 'telefono'){
+                return this.checkCampoTelefono;
+            } else {
+                return this.functionTrue;
+            }
+        }
+    };
     var getPlanta = function() {
         return sthis.datosHabitacion.planta
     };
@@ -32,18 +41,9 @@ var Habitación = function() {
     var setTelefono = function(TelefonoHabitacion) {
         sthis.datosHabitacion.telefono = TelefonoHabitacion
     };
-
-    this.checkCampo = function(campo){
-        if ((campo)&&(campo.length>0)){
-            if (campo === 'telefono'){
-                return this.checkCampoTelefono;
-            } else {
-                return this.functionTrue;
-            }
-        }
-    };
-    
-
+    var checkCampo = function(campo){
+        return sthis.checkCampo(campo);
+    }
     return {
         getPlanta: getPlanta,
         setPlanta: setPlanta,

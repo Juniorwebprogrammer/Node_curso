@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habitaciones</title>
+    <script src="qunit/qunit-2.18.0.js"></script>
+    <script src="qunit/jquery.min.js"></script>
+    <script src="habitación.js"></script>
+    <script src="vista_Habitaciones.js"></script>
+    <script src="controladorHabitaciones.js"></script>
+    <title>Ejercicio_4_vista_Habitaciones</title>
 </head>
 <body>
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
-    <script src="qunit/qunit-2.18.0.js"></script>
-    <script src="test.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="hotel.js"></script>
-    <script src="gerente.js"></script>
-    <script src="habitación.js"></script>
-
-    <form>
-        Planta <input type="text" id="planta" name="planta"/> <br/> <br/>
-        Número de camas <input type="text" id="numeroCamas" name="numeroCamas"/> <br/> <br/>
-        Telefono <input type="number" id="telefono" name="telefono"/>
-    </form>
+    <div id="formulario">
+        <form>
+            Planta <input type="text" id="planta" name="planta"/> <br/> <br/>
+            Número de camas <input type="text" id="numeroCamas" name="numeroCamas"/> <br/> <br/>
+            Telefono <input type="number" id="telefono" name="telefono"/> <br/> <br/>
+            <input id="procesarHabitación" type="submit" value="Procesar">
+        </form>
+    </div>
 </body>
 </html>
